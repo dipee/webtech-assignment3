@@ -1,5 +1,6 @@
 
 using Assignment3.Data;
+using Assignment3.DTO;
 using Assignment3.Models;
 using Microsoft.AspNetCore.Mvc;
 namespace Assignment3.Controllers {
@@ -18,10 +19,18 @@ namespace Assignment3.Controllers {
         }
 
         [HttpPost]
-        public Product Post(Product product) {
-            _context.Products.Add(product);
+        public ProductDTO Post(ProductDTO productDTO) {
+            Product newProduct = new Product {
+                Name = productDTO.Name,
+                Image = productDTO.Image,
+                Price = productDTO.Price,
+                Description = productDTO.Description,
+                ShippingCost = productDTO.ShippingCost
+            };
+            _context.Products.Add(newProduct);
             _context.SaveChanges();
-            return product;
+            productDTO.Id = newProduct.Id;
+            return productDTO;
         }
 
         [HttpPut("{id}")]

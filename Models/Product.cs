@@ -15,6 +15,9 @@ namespace Assignment3.Models {
 
         [Required]
         public string ShippingCost { get; set; }
+
+        // Navigation property for related comments
+        public ICollection<Comment> Comments { get; set; }
        
        
     }
