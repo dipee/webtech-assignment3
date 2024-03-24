@@ -14,8 +14,8 @@ namespace Assignment3.Controllers {
         }
 
         [HttpGet]
-        public IEnumerable<CommentDTO> Get() {
-            return _context.Comments.Select(c => new CommentDTO {
+        public IEnumerable<CommentListDTO> Get() {
+            return _context.Comments.Select(c => new CommentListDTO {
                 Id = c.Id,
                 Text = c.Text,
                 Rating = c.Rating,
@@ -26,7 +26,7 @@ namespace Assignment3.Controllers {
         }
 
         [HttpPost]
-        public CommentDTO Post(CommentDTO comment) {
+        public CommentCreateDTO Post(CommentCreateDTO comment) {
             Comment newComment = new Comment {
                 Text = comment.Text,
                 Rating = comment.Rating,
@@ -42,13 +42,18 @@ namespace Assignment3.Controllers {
         }
 
         [HttpPut("{id}")]
-        public Comment Put(int id, Comment comment) {
+        public CommentCreateDTO Put(int id, CommentCreateDTO commentCreateDTO) {
             var existingComment = _context.Comments.Find(id);
-            existingComment.Text = comment.Text;
-            existingComment.ProductId = comment.ProductId;
+            existingComment.Text = commentCreateDTO.Text;
+            existingComment.Rating = commentCreateDTO.Rating;
+            existingComment.Image = commentCreateDTO.Image;
+            existingComment.ProductId = commentCreateDTO.ProductId;
+            existingComment.UserId = commentCreateDTO.UserId;
             _context.Comments.Update(existingComment);
             _context.SaveChanges();
-            return existingComment;
+            commentCreateDTO.Id = existingComment.Id;
+            return commentCreateDTO;
+            
         }
 
         [HttpDelete("{id}")]

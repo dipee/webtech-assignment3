@@ -14,12 +14,26 @@ namespace Assignment3.Controllers {
         }
 
         [HttpGet]
-        public IEnumerable<Product> Get() {
-            return _context.Products.ToList();
+        public IEnumerable<ProductListDTO> Get() {
+            return _context.Products.Select(p => new ProductListDTO {
+                Id = p.Id,
+                Name = p.Name,
+                Image = p.Image,
+                Price = p.Price,
+                Description = p.Description,
+                ShippingCost = p.ShippingCost,
+                Comments = p.Comments.Select(c => new CommentListDTO {
+                    Id = c.Id,
+                    Text = c.Text,
+                    Rating = c.Rating,
+                    Image = c.Image,
+                    ProductId = c.ProductId,
+                    UserId = c.UserId}).ToList()
+            }).ToList();
         }
 
         [HttpPost]
-        public ProductDTO Post(ProductDTO productDTO) {
+        public ProductCreateDTO Post(ProductCreateDTO productDTO) {
             Product newProduct = new Product {
                 Name = productDTO.Name,
                 Image = productDTO.Image,
@@ -34,16 +48,18 @@ namespace Assignment3.Controllers {
         }
 
         [HttpPut("{id}")]
-        public Product Put(int id, Product product) {
+        public ProductCreateDTO Put(int id, ProductCreateDTO productDTO) {
             var existingProduct = _context.Products.Find(id);
-            existingProduct.Name = product.Name;
-            existingProduct.Image = product.Image;
-            existingProduct.Price = product.Price;
-            existingProduct.Description = product.Description;
-            existingProduct.ShippingCost = product.ShippingCost;
+            existingProduct.Name = productDTO.Name;
+            existingProduct.Image = productDTO.Image;
+            existingProduct.Price = productDTO.Price;
+            existingProduct.Description = productDTO.Description;
+            existingProduct.ShippingCost = productDTO.ShippingCost;
             _context.Products.Update(existingProduct);
             _context.SaveChanges();
-            return existingProduct;
+            productDTO.Id = existingProduct.Id;
+            return productDTO;
+            
         }
         [HttpDelete("{id}")]
         public Product Delete(int id) {
