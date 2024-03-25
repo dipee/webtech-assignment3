@@ -61,7 +61,7 @@ namespace Assignment3.Controllers {
 
         // Delete a cart by id
         [HttpDelete("{id}")]
-        public Cart Delete(int id) {
+        public CartCreateDTO Delete(int id) {
             Cart cart = _context.Carts.Find(id);
 
             // If the cart exists, remove it from the database
@@ -69,7 +69,12 @@ namespace Assignment3.Controllers {
                 _context.Carts.Remove(cart);
                 _context.SaveChanges();
             }
-            return cart;
+            return new CartCreateDTO {
+                Id = cart.Id,
+                ProductId = cart.ProductId,
+                UserId = cart.UserId,
+                Quantity = cart.Quantity
+            };
         }
     }
 }

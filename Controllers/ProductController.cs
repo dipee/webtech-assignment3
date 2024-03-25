@@ -66,14 +66,21 @@ namespace Assignment3.Controllers {
 
         // Delete a product by id
         [HttpDelete("{id}")]
-        public Product Delete(int id) {
+        public ProductCreateDTO Delete(int id) {
             Product product = _context.Products.Find(id);
             // If the product exists, remove it from the database
             if (product != null) {
                 _context.Products.Remove(product);
                 _context.SaveChanges();
             }
-            return product;
+            return new ProductCreateDTO {
+                Id = product.Id,
+                Name = product.Name,
+                Image = product.Image,
+                Price = product.Price,
+                Description = product.Description,
+                ShippingCost = product.ShippingCost
+            };
         }
         
     }

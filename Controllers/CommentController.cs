@@ -60,7 +60,7 @@ namespace Assignment3.Controllers {
 
         // Delete a comment by id
         [HttpDelete("{id}")]
-        public Comment Delete(int id) {
+        public CommentCreateDTO Delete(int id) {
             Comment comment = _context.Comments.Find(id);
 
             // If the comment exists, remove it from the database
@@ -68,7 +68,14 @@ namespace Assignment3.Controllers {
                 _context.Comments.Remove(comment);
                 _context.SaveChanges();
             }
-            return comment;
+            return new CommentCreateDTO {
+                Id = comment.Id,
+                Text = comment.Text,
+                Rating = comment.Rating,
+                Image = comment.Image,
+                ProductId = comment.ProductId,
+                UserId = comment.UserId
+            };
         }
     }
 
