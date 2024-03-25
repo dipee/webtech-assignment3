@@ -12,15 +12,18 @@ namespace Assignment3.Controllers {
     public class UserController : ControllerBase {
         private readonly AppDbContext _context;
 
+        // Constructor
         public UserController(AppDbContext context) {
             _context = context;
         }
 
+        // Get all users
         [HttpGet]
         public IEnumerable<User> Get() {
             return _context.Users.ToList();
         }
 
+        // Get a user by id
         [HttpPost]
         public User Post(User user) {
             _context.Users.Add(user);
@@ -28,6 +31,7 @@ namespace Assignment3.Controllers {
             return user;
         }
 
+        // Create a new user
         [HttpPut("{id}")]
         public User Put(int id, User user) {
             var existingUser = _context.Users.Find(id);
@@ -40,6 +44,7 @@ namespace Assignment3.Controllers {
             return existingUser;
         }
 
+        // Update a user by id
         [HttpDelete("{id}")]
         public User Delete(int id) {
             User user = _context.Users.Find(id);

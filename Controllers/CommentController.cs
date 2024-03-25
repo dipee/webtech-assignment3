@@ -13,6 +13,7 @@ namespace Assignment3.Controllers {
             _context = context;
         }
 
+        // Get all comments
         [HttpGet]
         public IEnumerable<CommentListDTO> Get() {
             return _context.Comments.Select(c => new CommentListDTO {
@@ -24,7 +25,7 @@ namespace Assignment3.Controllers {
                 UserId = c.UserId
             }).ToList();
         }
-
+        // Create a new comment
         [HttpPost]
         public CommentCreateDTO Post(CommentCreateDTO comment) {
             Comment newComment = new Comment {
@@ -41,6 +42,7 @@ namespace Assignment3.Controllers {
            
         }
 
+        // Update a comment by id
         [HttpPut("{id}")]
         public CommentCreateDTO Put(int id, CommentCreateDTO commentCreateDTO) {
             var existingComment = _context.Comments.Find(id);
@@ -56,6 +58,7 @@ namespace Assignment3.Controllers {
             
         }
 
+        // Delete a comment by id
         [HttpDelete("{id}")]
         public Comment Delete(int id) {
             Comment comment = _context.Comments.Find(id);

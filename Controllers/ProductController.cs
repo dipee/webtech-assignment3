@@ -12,7 +12,7 @@ namespace Assignment3.Controllers {
         public ProductController(AppDbContext context) {
             _context = context;
         }
-
+        // Get all products
         [HttpGet]
         public IEnumerable<ProductListDTO> Get() {
             return _context.Products.Select(p => new ProductListDTO {
@@ -32,6 +32,7 @@ namespace Assignment3.Controllers {
             }).ToList();
         }
 
+        // Create a new product
         [HttpPost]
         public ProductCreateDTO Post(ProductCreateDTO productDTO) {
             Product newProduct = new Product {
@@ -47,6 +48,7 @@ namespace Assignment3.Controllers {
             return productDTO;
         }
 
+        // Update a product by id
         [HttpPut("{id}")]
         public ProductCreateDTO Put(int id, ProductCreateDTO productDTO) {
             var existingProduct = _context.Products.Find(id);
@@ -61,6 +63,8 @@ namespace Assignment3.Controllers {
             return productDTO;
             
         }
+
+        // Delete a product by id
         [HttpDelete("{id}")]
         public Product Delete(int id) {
             Product product = _context.Products.Find(id);
