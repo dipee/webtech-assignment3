@@ -75,5 +75,23 @@ namespace Assignment3.Controllers {
                 Quantity = cart.Quantity
             };
         }
+
+        //get cart by user id
+        [HttpGet("{userId}")]
+        public IEnumerable<CartListDTO> GetByUserId(int userId) {
+            return _context.Carts.Where(c => c.UserId == userId).Select(c => new CartListDTO {
+                Id = c.Id,
+                ProductId = c.ProductId,
+                UserId = c.UserId,
+                Quantity = c.Quantity,
+                Product = new CartProductDTO {
+                    Id = c.Product.Id,
+                    Name = c.Product.Name,
+                    Image = c.Product.Image,
+                    Price = c.Product.Price,
+                    Description = c.Product.Description
+                }
+            }).ToList();
+        }
     }
 }
