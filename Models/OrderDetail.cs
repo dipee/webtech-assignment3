@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment3.Models {
-    public class OrderDetails {
+    public class OrderDetail {
         public int Id { get; set; }
         public int OrderId { get; set; }
 

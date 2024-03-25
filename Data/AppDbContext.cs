@@ -18,7 +18,7 @@ namespace Assignment3.Data {
 
         public DbSet<Order> Orders { get; set; }
 
-        public DbSet<OrderDetails> OrderDetails { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
 
     }

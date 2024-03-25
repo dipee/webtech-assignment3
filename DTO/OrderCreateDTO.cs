@@ -1,5 +1,6 @@
-namespace Assignment3.Models {
-    public class Order {
+
+namespace Assignment3.DTO {
+    public class OrderCreateDTO{
         public int Id { get; set; }
         public int UserId { get; set; }
         public string CreatedDate { get; set; }
@@ -7,6 +8,6 @@ namespace Assignment3.Models {
         public string ShippingCost { get; set; }
         public string Total { get; set; }
 
-        public ICollection<OrderDetail> OrderDetails { get; set; }
+        public List<OrderDetailCreateDTO> OrderDetails { get; set; }
     }
 }

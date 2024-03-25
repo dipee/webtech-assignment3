@@ -26,8 +26,7 @@ namespace Assignment3.Controllers {
                     Name = c.Product.Name,
                     Image = c.Product.Image,
                     Price = c.Product.Price,
-                    Description = c.Product.Description,
-                    ShippingCost = c.Product.ShippingCost
+                    Description = c.Product.Description
                 }
             }).ToList();
         }
