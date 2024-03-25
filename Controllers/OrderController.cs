@@ -42,7 +42,7 @@ namespace Assignment3.Controllers {
            //get OrderDetails from orderDTO and save to database with newly created OrderId 
             Order newOrder = new Order {
                 UserId = orderDTO.UserId,
-                CreatedDate = orderDTO.CreatedDate,
+                CreatedDate = new System.DateTime(),
                 ShippingAddress = orderDTO.ShippingAddress,
                 ShippingCost = orderDTO.ShippingCost,
                 Total = orderDTO.Total,
