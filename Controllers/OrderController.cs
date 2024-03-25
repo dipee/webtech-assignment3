@@ -61,7 +61,6 @@ namespace Assignment3.Controllers {
         public OrderCreateDTO Put(int id, OrderCreateDTO orderDTO) {
             Order existingOrder = _context.Orders.Find(id);
             existingOrder.UserId = orderDTO.UserId;
-            existingOrder.CreatedDate = orderDTO.CreatedDate;
             existingOrder.ShippingAddress = orderDTO.ShippingAddress;
             existingOrder.ShippingCost = orderDTO.ShippingCost;
             existingOrder.Total = orderDTO.Total;
@@ -81,7 +80,6 @@ namespace Assignment3.Controllers {
             return new OrderCreateDTO {
                 Id = order.Id,
                 UserId = order.UserId,
-                CreatedDate = order.CreatedDate,
                 ShippingAddress = order.ShippingAddress,
                 ShippingCost = order.ShippingCost,
                 Total = order.Total
