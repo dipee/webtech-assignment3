@@ -1,0 +1,1521 @@
+{
+	"info": {
+		"_postman_id": "e7e5e2e0-fb1a-4cfd-b8be-e62854a4d29a",
+		"name": "WEBTECH ASSIGN3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12878193"
+	},
+	"item": [
+		{
+			"name": "User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5077/api/User",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"User"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5077/api/User",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"User"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 00:55:56 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"hari\",\n        \"password\": \"hari1234\",\n        \"email\": \"Ram@gmail.com\",\n        \"shippingAddress\": \"asdfjalf\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5077/api/Order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5077/api/Order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Order"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:18:34 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"userId\": 1,\n        \"createdDate\": \"0001-01-01T00:00:00\",\n        \"shippingAddress\": \"this si address\",\n        \"shippingCost\": \"10\",\n        \"total\": \"100\",\n        \"orderDetails\": []\n    },\n    {\n        \"id\": 2,\n        \"userId\": 1,\n        \"createdDate\": \"0001-01-01T00:00:00\",\n        \"shippingAddress\": \"new address\",\n        \"shippingCost\": \"4\",\n        \"total\": \"160\",\n        \"orderDetails\": [\n            {\n                \"id\": 2,\n                \"product\": {\n                    \"id\": 2,\n                    \"name\": \"orange\",\n                    \"image\": \"orange.jpg\",\n                    \"price\": 20,\n                    \"description\": \"big ornages\"\n                },\n                \"quantity\": 10\n            },\n            {\n                \"id\": 3,\n                \"product\": {\n                    \"id\": 3,\n                    \"name\": \"New Pen\",\n                    \"image\": \"Pen.jpg\",\n                    \"price\": 3,\n                    \"description\": \"Black pen\"\n                },\n                \"quantity\": 8\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"userId\": 1,\n  \"shippingAddress\": \"new address\",\n  \"shippingCost\": \"4\",\n  \"total\": \"160\",\n  \"orderDetails\": [\n    {\n      \n      \"productId\": 2,\n      \"quantity\": 10\n    },\n    {\n      \n      \"productId\": 3,\n      \"quantity\": 8\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5077/api/Order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"userId\": 1,\n  \"shippingAddress\": \"new address\",\n  \"shippingCost\": \"4\",\n  \"total\": \"160\",\n  \"orderDetails\": [\n    {\n      \n      \"productId\": 2,\n      \"quantity\": 10\n    },\n    {\n      \n      \"productId\": 3,\n      \"quantity\": 8\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/Order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Order"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:18:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"userId\": 1,\n    \"shippingAddress\": \"new address\",\n    \"shippingCost\": \"4\",\n    \"total\": \"160\",\n    \"orderDetails\": [\n        {\n            \"id\": 0,\n            \"productId\": 2,\n            \"quantity\": 10\n        },\n        {\n            \"id\": 0,\n            \"productId\": 3,\n            \"quantity\": 8\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5077/api/Comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Comment"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5077/api/User",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"User"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 00:55:56 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"hari\",\n        \"password\": \"hari1234\",\n        \"email\": \"Ram@gmail.com\",\n        \"shippingAddress\": \"asdfjalf\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"text\": \"nice\",\n  \"rating\": 5,\n  \"image\": \"new.jpg\",\n  \"productId\": 2,\n  \"userId\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5077/api/Comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Comment"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"text\": \"nice\",\n  \"rating\": 5,\n  \"image\": \"new.jpg\",\n  \"productId\": 2,\n  \"userId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/Comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Comment"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:15:24 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"text\": \"nice\",\n    \"rating\": 5,\n    \"image\": \"new.jpg\",\n    \"productId\": 2,\n    \"userId\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"text\": \"nice nice nice\",\n  \"rating\": 5,\n  \"image\": \"new.jpg\",\n  \"productId\": 2,\n  \"userId\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5077/api/Comment/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Comment",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"text\": \"nice nice nice\",\n  \"rating\": 5,\n  \"image\": \"new.jpg\",\n  \"productId\": 2,\n  \"userId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/Comment/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Comment",
+								"3"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:16:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "System.NullReferenceException: Object reference not set to an instance of an object.\n   at Assignment3.Controllers.CommentController.Put(Int32 id, CommentCreateDTO commentCreateDTO) in /Users/dipen/Documents/SECOND_SEM/web_development/Assignment3/Controllers/CommentController.cs:line 49\n   at lambda_method150(Closure, Object, Object[])\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()\n--- End of stack trace from previous location ---\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()\n--- End of stack trace from previous location ---\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)\n   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)\n   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)\n   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)\n   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)\n   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)\n   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)\n\nHEADERS\n=======\nAccept: */*\nConnection: keep-alive\nHost: localhost:5077\nUser-Agent: PostmanRuntime/7.36.3\nAccept-Encoding: gzip, deflate, br\nCache-Control: no-cache\nContent-Type: application/json\nContent-Length: 101\nPostman-Token: 6da6bcea-04be-424e-8103-87bd4fad27dd\n"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"text\": \"nice nice nice\",\n  \"rating\": 5,\n  \"image\": \"new.jpg\",\n  \"productId\": 2,\n  \"userId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/Comment/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Comment",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:16:29 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"text\": \"nice nice nice\",\n    \"rating\": 5,\n    \"image\": \"new.jpg\",\n    \"productId\": 2,\n    \"userId\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5077/api/Cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Cart"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5077/api/User",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"User"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 00:55:56 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"hari\",\n        \"password\": \"hari1234\",\n        \"email\": \"Ram@gmail.com\",\n        \"shippingAddress\": \"asdfjalf\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Cart Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"productId\": 3,\n  \"userId\": 2,\n  \"quantity\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5077/api/Cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Cart"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"productId\": 3,\n  \"userId\": 2,\n  \"quantity\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/Cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Cart"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:11:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"productId\": 3,\n    \"userId\": 2,\n    \"quantity\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"productId\": 3,\n  \"userId\": 1,\n  \"quantity\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5077/api/Cart/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Cart",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"productId\": 3,\n  \"userId\": 1,\n  \"quantity\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/Cart/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Cart",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:13:04 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"productId\": 3,\n    \"userId\": 1,\n    \"quantity\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"productId\": 3,\n  \"userId\": 2,\n  \"quantity\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5077/api/Cart/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Cart",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"productId\": 3,\n  \"userId\": 2,\n  \"quantity\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/Cart/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Cart",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:13:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"productId\": 3,\n    \"userId\": 1,\n    \"quantity\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "User Cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5077/api/Cart/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Cart",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5077/api/Cart/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Cart",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:10:37 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"productId\": 2,\n        \"userId\": 1,\n        \"quantity\": 2,\n        \"product\": {\n            \"id\": 2,\n            \"name\": \"orange\",\n            \"image\": \"orange.jpg\",\n            \"price\": 20,\n            \"description\": \"big ornages\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"productId\": 3,\n        \"userId\": 1,\n        \"quantity\": 4,\n        \"product\": {\n            \"id\": 3,\n            \"name\": \"New Pen\",\n            \"image\": \"Pen.jpg\",\n            \"price\": 3,\n            \"description\": \"Black pen\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5077/api/Product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5077/api/Product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Product"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 00:59:38 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Apple\",\n        \"image\": \"apple.jpg\",\n        \"price\": 100,\n        \"description\": \"Sweet apple\",\n        \"shippingCost\": \"10\",\n        \"comments\": []\n    },\n    {\n        \"id\": 2,\n        \"name\": \"orange\",\n        \"image\": \"orange.jpg\",\n        \"price\": 20,\n        \"description\": \"big ornages\",\n        \"shippingCost\": \"2\",\n        \"comments\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"name\": \"Pen\",\n  \"image\": \"Pen.jpg\",\n  \"price\": 3\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5077/api/Product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"name\": \"Pen\",\n  \"image\": \"Pen.jpg\",\n  \"price\": 3,\n  \"description\": \"Black pen\",\n  \"shippingCost\": \"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/Product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Product"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:01:09 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"name\": \"Pen\",\n    \"image\": \"Pen.jpg\",\n    \"price\": 3,\n    \"description\": \"Black pen\",\n    \"shippingCost\": \"2\"\n}"
+				},
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"name\": \"Pen\",\n  \"image\": \"Pen.jpg\",\n  \"price\": 3,\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/Product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Product"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/problem+json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:01:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc7231#section-6.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"traceId\": \"00-951e2cca12e07b45342f7fb854fb9e83-e4ed583d54907d33-00\",\n    \"errors\": {\n        \"$\": [\n            \"The JSON object contains a trailing comma at the end which is not supported in this mode. Change the reader options. Path: $ | LineNumber: 6 | BytePositionInLine: 0.\"\n        ],\n        \"productDTO\": [\n            \"The productDTO field is required.\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"name\": \"New Pen\",\n    \"image\": \"Pen.jpg\",\n    \"price\": 3,\n    \"description\": \"Black pen\",\n    \"shippingCost\": \"2\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5077/api/Product/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Product",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "400",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"name\": \"Pen\",\n  \"image\": \"Pen.jpg\",\n  \"price\": 3\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/Product/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Product",
+								"3"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/problem+json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:02:13 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc7231#section-6.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"traceId\": \"00-4ce69b9688a3e16d87bfabc34f466220-519116491412a793-00\",\n    \"errors\": {\n        \"Description\": [\n            \"The Description field is required.\"\n        ],\n        \"ShippingCost\": [\n            \"The ShippingCost field is required.\"\n        ]\n    }\n}"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"name\": \"New Pen\",\n    \"image\": \"Pen.jpg\",\n    \"price\": 3,\n    \"description\": \"Black pen\",\n    \"shippingCost\": \"2\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/Product/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Product",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:02:37 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"name\": \"New Pen\",\n    \"image\": \"Pen.jpg\",\n    \"price\": 3,\n    \"description\": \"Black pen\",\n    \"shippingCost\": \"2\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"name\": \"Pen\",\n  \"image\": \"Pen.jpg\",\n  \"price\": 3\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5077/api/Product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"Product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5077/api/Product/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"Product",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 01:03:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Apple\",\n    \"image\": \"apple.jpg\",\n    \"price\": 100,\n    \"description\": \"Sweet apple\",\n    \"shippingCost\": \"10\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n  \"username\": \"John\",\n  \"password\": \"heyJohn\",\n  \"email\": \"j@gmail.com\",\n  \"shippingAddress\": \"new address\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5077/api/User",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"User"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n  \"username\": \"John\",\n  \"password\": \"heyJohn\",\n  \"email\": \"j@gmail.com\",\n  \"shippingAddress\": \"new address\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/User",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"User"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 00:57:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"username\": \"John\",\n    \"password\": \"heyJohn\",\n    \"email\": \"j@gmail.com\",\n    \"shippingAddress\": \"new address\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n  \"username\": \"Sjhyam\",\n  \"password\": \"heyJohn\",\n  \"email\": \"j@gmail.com\",\n  \"shippingAddress\": \"new address\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5077/api/User/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"User",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n  \"username\": \"Sjhyam\",\n  \"password\": \"heyJohn\",\n  \"email\": \"j@gmail.com\",\n  \"shippingAddress\": \"new address\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/User/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"User",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 00:58:26 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"username\": \"Sjhyam\",\n    \"password\": \"heyJohn\",\n    \"email\": \"j@gmail.com\",\n    \"shippingAddress\": \"new address\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n  \"username\": \"Sjhyam\",\n  \"password\": \"heyJohn\",\n  \"email\": \"j@gmail.com\",\n  \"shippingAddress\": \"new address\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5077/api/User/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5077",
+					"path": [
+						"api",
+						"User",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n  \"username\": \"Sjhyam\",\n  \"password\": \"heyJohn\",\n  \"email\": \"j@gmail.com\",\n  \"shippingAddress\": \"new address\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5077/api/User/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5077",
+							"path": [
+								"api",
+								"User",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 25 Mar 2024 00:59:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"username\": \"hari\",\n    \"password\": \"hari1234\",\n    \"email\": \"Ram@gmail.com\",\n    \"shippingAddress\": \"asdfjalf\"\n}"
+				}
+			]
+		}
+	]
+}
