@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment3.Models {
-    // This class represents a comment on a product where product is FK
+   
     public class Comment {
         public int Id { get; set; }
         public string Text { get; set; }
